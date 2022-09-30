@@ -1,0 +1,15 @@
+.raw-input {
+  min-width: 45%;
+}
+.raw-input h1 {
+  font-size: 2.5rem;
+  margin: 1rem auto;
+  font-weight: 600;
+}
+
+.raw-input textarea {
+  background-color: #e8e8e8;
+  resize: both;
+  min-height: 400px;
+  min-width: 100%;
+}
