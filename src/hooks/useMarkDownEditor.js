@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Remarkable } from "remarkable";
 import { linkify } from "remarkable/linkify";
 
@@ -10,13 +10,13 @@ export default function useMarkDownEditor() {
     setRawText(value);
   }
 
-    useEffect(() => {
-      getMarkDownAsHTMLOutput();
-    }, [rawText, getMarkDownAsHTMLOutput]);
-
-  function getMarkDownAsHTMLOutput() {
+  const getMarkDownAsHTMLOutput = useCallback(() => {
     return { __html: md.render(rawText) };
-  }
+  }, [rawText]);
+
+  useEffect(() => {
+    getMarkDownAsHTMLOutput();
+  }, [rawText, getMarkDownAsHTMLOutput]);
 
   return [rawText, handleChangeRawInputedText, getMarkDownAsHTMLOutput];
 }
