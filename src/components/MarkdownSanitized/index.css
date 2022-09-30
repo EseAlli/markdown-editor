@@ -1,0 +1,8 @@
+.markdown-output {
+  min-width: 45%;
+  align-self: center;
+}
+
+.markdown-output h2 {
+  margin-bottom: 2rem;
+}
