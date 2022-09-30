@@ -4,6 +4,10 @@ import { linkify } from "remarkable/linkify";
 
 let md = new Remarkable().use(linkify);
 
+md.set({
+  html: true,
+});
+
 export default function useMarkDownEditor() {
   const [rawText, setRawText] = useState("");
   function handleChangeRawInputedText(value) {
