@@ -8,8 +8,13 @@ md.set({
   html: true,
 });
 
+function getInitialText() {
+  const text = localStorage.getItem("rawText");
+  return text ? JSON.parse(text) : "# Hello World";
+}
+
 export default function useMarkDownEditor() {
-  const [rawText, setRawText] = useState("");
+  const [rawText, setRawText] = useState(getInitialText);
   function handleChangeRawInputedText(value) {
     setRawText(value);
   }
@@ -19,6 +24,7 @@ export default function useMarkDownEditor() {
   }, [rawText]);
 
   useEffect(() => {
+    localStorage.setItem("rawText", JSON.stringify(rawText));
     getMarkDownAsHTMLOutput();
   }, [rawText, getMarkDownAsHTMLOutput]);
 
