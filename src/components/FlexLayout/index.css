@@ -1,0 +1,8 @@
+.layout{
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 100%;
+    margin: 3rem auto;
+    justify-content: space-between;
+    flex-direction: row;
+}
