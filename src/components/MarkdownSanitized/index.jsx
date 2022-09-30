@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { markDownContext } from "../context/markDownContext";
+import { markDownContext } from "../../context/markDownContext";
 
 const MarkdownSanitized = () => {
   const { getMarkDownAsHTMLOutput } = useContext(markDownContext);

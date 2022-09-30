@@ -12,7 +12,7 @@ function App() {
     <markDownContext.Provider
       value={{ rawText, handleChangeRawInputedText, getMarkDownAsHTMLOutput }}
     >
-      <div className="container mx-auto">
+      <div className="container">
         <FlexLayout>
           <RawInputText />
           <MarkdownSanitized />
